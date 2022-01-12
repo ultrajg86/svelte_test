@@ -1,15 +1,20 @@
 <script>
+	import { writable } from 'svelte/store';
 	import Todo from './Todo.svelte';
 	let title ='';
-	let todos = [];
+	let todos = writable([]);
 	let id = 0;
 
 	function createTodo(){
-		todos.push({
+		if(!title.trim()){
+			title = '';
+			return
+		}
+		$todos.push({
 			id,
 			title
 		});
-		todos = todos;
+		$todos = $todos;
 		title = '';
 		id += 1;
 	}
@@ -22,6 +27,6 @@
 	Create Todo
 </button>
 
-{#each todos as todo}
+{#each $todos as todo}
 	<Todo {todos} {todo} />
 {/each}

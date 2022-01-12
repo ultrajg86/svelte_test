@@ -20,7 +20,7 @@
     }
 
     function deleteTodo(){
-        todos = todos.filter(t => t.id !== todo.id);
+        $todos = $todos.filter(t => t.id !== todo.id);
     }
 
 </script>
