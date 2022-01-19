@@ -8,3 +8,10 @@ const app = new App({
 });
 
 export default app;
+
+if(import.meta.host){
+	import.meta.host.accept();
+	import.meta.host.dispose(() => {
+		app.$destroy();
+	});
+}
