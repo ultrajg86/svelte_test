@@ -1,3 +1,4 @@
+// https://github.com/HeropCode/Svelte-Movie-app
 import App from './App.svelte';
 
 const app = new App({
