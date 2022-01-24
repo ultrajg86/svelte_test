@@ -1,32 +1,30 @@
 <script>
-	import { writable } from 'svelte/store';
-	import Todo from './Todo.svelte';
-	let title ='';
-	let todos = writable([]);
-	let id = 0;
-
-	function createTodo(){
-		if(!title.trim()){
-			title = '';
-			return
-		}
-		$todos.push({
-			id,
-			title
-		});
-		$todos = $todos;
-		title = '';
-		id += 1;
-	}
+	export let name;
 </script>
 
-<input bind:value={title} 
-		type="text"
-		on:keydown={(e) => {e.key === 'Enter' && createTodo()}} />
-<button on:click={createTodo}>
-	Create Todo
-</button>
+<main>
+	<h1>Hello {name}!</h1>
+	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
+</main>
 
-{#each $todos as todo}
-	<Todo {todos} {todo} />
-{/each}
+<style>
+	main {
+		text-align: center;
+		padding: 1em;
+		max-width: 240px;
+		margin: 0 auto;
+	}
+
+	h1 {
+		color: #ff3e00;
+		text-transform: uppercase;
+		font-size: 4em;
+		font-weight: 100;
+	}
+
+	@media (min-width: 640px) {
+		main {
+			max-width: none;
+		}
+	}
+</style>
