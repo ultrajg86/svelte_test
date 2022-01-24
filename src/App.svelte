@@ -1,30 +1,31 @@
 <script>
-	export let name;
+	// import Assignments from './components/reactive/Assignments.svelte';
+	// import Declarations from './components/reactive/Declarations.svelte';
+	// import Statements from './components/reactive/Statements.svelte';
+	// import Declaring from "./components/props/Declaring.svelte";
+	// import Default from "./components/props/Default.svelte";
+	// import Spread from "./components/props/Spread.svelte";
+
+	// const pkg = {
+	// 	name: "svelte",
+	// 	version: 3,
+	// 	speed: 'blazing',
+	// 	website: 'https://svelte.dev'
+	// };
+
+	import Ifblocks from "./components/logic/Ifblocks.svelte";
+	import Eachblocks from "./components/logic/Eachblocks.svelte";
+	import Keyed from "./components/logic/Keyed.svelte";
 </script>
 
-<main>
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
-</main>
+<!-- <Assignments />
+<Declarations />
+<Statements /> -->
+<!-- 
+<Declaring answer={11} />
+<Default />
+<Spread {...pkg} /> -->
 
-<style>
-	main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
-	}
-
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
-	}
-
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
-	}
-</style>
+<Ifblocks />
+<Eachblocks />
+<Keyed />
