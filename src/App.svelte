@@ -21,6 +21,13 @@
 	// import Await from "./components/logic/Await.svelte";
 
 	// import DomeventsTest from "./components/events/Domevents.svelte";
+	import Inline from "./components/events/Component-events.svelte";
+
+	import CustomButton from "./components/events/CustomButton.svelte";
+
+	function handleClick(){
+		alert("clicked");
+	}
 
 	// let promise = postList();
 	// async function postList() {
@@ -50,7 +57,10 @@
 <Keyed />
 <Await /> -->
 
-<!-- <DomeventsTest /> -->
+<Inline />
+
+<CustomButton on:click={handleClick} />
+
 <!-- 
 {#await promise}
 	<p style="color: blue;">...waiting</p>

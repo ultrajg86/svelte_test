@@ -6,7 +6,7 @@
     let promise = getRandomNumber();
 
     async function getRandomNumber() {
-        // const res = await fetch('https://api.telegram.org/bot608515721:AAHshpBhXmzolyuEFb5M-vpAllYzdq8h2vI/sendMessage?chat_id=492287225&text='+message);
+        const res = await fetch('https://api.telegram.org/bot608515721:AAHshpBhXmzolyuEFb5M-vpAllYzdq8h2vI/sendMessage?chat_id=492287225&text='+message);
         const text = await res.text();
 
         console.log(res);
@@ -22,7 +22,8 @@
         promise = getRandomNumber();
     }
 </script>
-{message}
+
+<p>{message}</p>
 <input type="text" bind:value={message} />
 <button on:click={handleClick}>generate random number</button>
 
