@@ -1,5 +1,5 @@
 <script>
-	import Domevents from "./components/events/Domevents.svelte";
+	// import Domevents from "./components/events/Domevents.svelte";
 
 	// import Assignments from './components/reactive/Assignments.svelte';
 	// import Declarations from './components/reactive/Declarations.svelte';
@@ -21,13 +21,12 @@
 	// import Await from "./components/logic/Await.svelte";
 
 	// import DomeventsTest from "./components/events/Domevents.svelte";
-	import Inline from "./components/events/Component-events.svelte";
+	// import Inline from "./components/events/Component-events.svelte";
+	// import CustomButton from "./components/events/CustomButton.svelte";
 
-	import CustomButton from "./components/events/CustomButton.svelte";
-
-	function handleClick(){
-		alert("clicked");
-	}
+	// function handleClick(){
+	// 	alert("clicked");
+	// }
 
 	// let promise = postList();
 	// async function postList() {
@@ -42,6 +41,16 @@
 	// 		throw new Error(text);
 	// 	}
 	// }
+
+
+
+	/**
+	 * bindgs
+	*/
+	import Textinputs from "./components/bindings/Textinputs.svelte";
+	import Groupinpugs from "./components/bindings/Groupinpugs.svelte";
+	import Textareainputs from "./components/bindings/Textareainputs.svelte";
+
 </script>
 
 <!-- <Assignments />
@@ -56,10 +65,10 @@
 <Eachblocks />
 <Keyed />
 <Await /> -->
-
+<!-- 
 <Inline />
 
-<CustomButton on:click={handleClick} />
+<CustomButton on:click={handleClick} /> -->
 
 <!-- 
 {#await promise}
@@ -75,3 +84,8 @@
 {:catch error}
 	<p style="color: red;">{error.message}</p>
 {/await} -->
+
+
+<Textinputs />
+<Groupinpugs />
+<Textareainputs />
