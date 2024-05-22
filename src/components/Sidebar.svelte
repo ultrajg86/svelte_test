@@ -1,7 +1,7 @@
 <script>
     let links = [
-      { name: 'Dashboard', href: '#', icon: 'home' },
-      { name: 'Settings', href: '#', icon: 'cog' },
+      { name: 'Dashboard', href: '/dashboard', icon: 'home' },
+      { name: 'TradeList', href: '/trade-list', icon: 'cog' },
       { name: 'Profile', href: '#', icon: 'user' }
     ];
   </script>
