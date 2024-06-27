@@ -1,6 +1,7 @@
 <script>
 	/** @type {import('./$types').PageData} */
 	export let data;
+	import TableRow from '../components/TableRow.svelte';
 </script>
 
 <svelte:head>
@@ -8,7 +9,7 @@
 	<meta name="description" content="Svelte demo app" />
 </svelte:head>
 
-<table class="md:border-spacing-4">
+<table class="border-collapse w-full border-spacing-x-24">
 	<thead>
 		<tr>
 			<th>Seq</th>
@@ -24,19 +25,18 @@
 		</tr>
 	</thead>
 	<tbody>
-		{#each data.lists as list}
-			<tr class={list.state === "done" ? "bg-green-500" : "bg-red-500"}>
-				<td>{list.seq}</td>
-				<td>{list.market}</td>
-				<td>{list.side}</td>
-				<td>{list.state}</td>
-				<td>{list.price}</td>
-				<td>{list.volume}</td>
-				<td>{list.price * list.volume * 0.0001}</td>
-				<td>{list.price * list.volume}</td>
-				<td>{list.createdAt}</td>
-				<td>{list.updatedAt}</td>
+		{#await data.lists}
+			<tr>
+				<td colspan="10">Loading....</td>
 			</tr>
-		{/each}
+		{:then lists}
+			{#each lists as list (list.seq)}
+				<TableRow {list} />
+			{/each}
+		{:catch error}
+			<tr>
+				<td colspan="10">error loading : {error.message}</td>
+			</tr>
+		{/await}
 	</tbody>
 </table>
